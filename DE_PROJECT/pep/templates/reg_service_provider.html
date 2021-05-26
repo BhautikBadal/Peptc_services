@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>service provider from</title>
+
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <script src="{% static 'js/registration.js' %}"></script>
+
+    <!-- Font special for pages-->
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+<body>
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="regProvider" >
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Service Provider's Registration Form</h2>
+                    {% for msg in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>
+                        {{ msg }}
+                        </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+                    <form method="POST" action="reg_serviceprovider">{% csrf_token %}
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="first_name" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="last_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">User name</label>
+                                    <input class="input--style-4" type="text" name="user_name" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Confirm Password</label>
+                                    <input class="input--style-4" type="password" name="sp_repassword" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="ser_email" required>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <textarea name="address" id="address" cols="30" rows="3" class="input--style-4"
+                                        style="border: none;" required></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="phone" required>
+                                </div>
+                            </div>
+<!--                            <div class="col-2">-->
+<!--                                <div class="input-group">-->
+<!--                                    <label class="label">Gender</label>-->
+<!--                                    <div class="p-t-10">-->
+<!--                                        <label class="radio-container m-r-45">Male-->
+<!--                                            <input type="radio" checked="checked" name="gender" required>-->
+<!--                                            <span class="checkmark"></span>-->
+<!--                                        </label>-->
+<!--                                        <label class="radio-container">Female-->
+<!--                                            <input type="radio" name="gender" required>-->
+<!--                                            <span class="checkmark"></span>-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+
+<!--                        <div class="row row-space">-->
+<!--                            <div class="col-2">-->
+<!--                                <div class="input-group">-->
+<!--                                    <label class="label">Address</label>-->
+<!--                                    <textarea name="address" id="address" cols="30" rows="3" class="input&#45;&#45;style-4"-->
+<!--                                        style="border: none;" required></textarea>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>PRPTC customer form</title>
+
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<!--    <link rel="stylesheet" href="{% static 'css/main.css' %}">-->
+
+<!--    <script src="{% static 'js/registration.js' %}"></script>-->
+
+    <!-- Font special for pages-->
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+
+</head>
+<body>
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="regUser" >
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Local User's Registration Form</h2>
+                    {% for msg in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>
+                        {{ msg }}
+                        </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+                    <form method="POST" action="reg_customer">{% csrf_token %}
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="first_name" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="last_name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">User name</label>
+                                    <input class="input--style-4" type="text" name="cus_user_name" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="cus_password" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Confirm Password</label>
+                                    <input class="input--style-4" type="password" name="cus_repassword" required>
+                                </div>
+                            </div>
+                        </div>
+
+<!--                        <div class="row row-space">-->
+<!--                            <div class="col-2">-->
+<!--                                <div class="input-group">-->
+<!--                                    <label class="label">Gender</label>-->
+<!--                                    <div class="p-t-10">-->
+<!--                                        <label class="radio-container m-r-45">Male-->
+<!--                                            <input type="radio" checked="checked" value="male" name="cus_gender" required>-->
+<!--                                            <span class="checkmark"></span>-->
+<!--                                        </label>-->
+<!--                                        <label class="radio-container">Female-->
+<!--                                            <input type="radio" name="cus_gender" value="female" required>-->
+<!--                                            <span class="checkmark"></span>-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="cus_email" required>
+                                </div>
+                            </div>
+<!--                            <div class="col-2">-->
+<!--                                <div class="input-group">-->
+<!--                                    <label class="label">Phone Number</label>-->
+<!--                                    <input class="input&#45;&#45;style-4" type="text" name="cus_phone" required>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+<!--                        <div class="row row-space">-->
+<!--                            <div class="col-2">-->
+<!--                                <div class="input-group">-->
+<!--                                    <label class="label">Address</label>-->
+<!--                                    <textarea name="cus_address" id="address" cols="30"  rows="3" class="input&#45;&#45;style-4"-->
+<!--                                        style="border: none;" required></textarea>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
